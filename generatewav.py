@@ -2,10 +2,10 @@ import wavio
 import numpy as np
 
 s = input("Enter your data: ")
-s += '.'
+
 filename = input("Enter filename(without extension): ")
-print((''.join(map(bin,bytearray(s, 'utf-8')))))
-binout = ((''.join(map(bin,bytearray(s, 'utf-8')))).replace("b", "")).replace(" ", "")
+print(bin(int.from_bytes(s.encode(), 'big')))
+binout = bin(int.from_bytes(s.encode(), 'big'))
 print(binout)
 
 
