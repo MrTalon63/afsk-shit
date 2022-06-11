@@ -7,8 +7,8 @@ def splitEvery(string, splitLength):
 	return [string[i:i+splitLength] for i in range(0, len(string), splitLength)]
 
 filename = input("Enter filename(without extension): ")
-print(bin(int.from_bytes(s.encode(), 'big')))
-binout = bin(int.from_bytes(s.encode(), 'big')).replace("b", "")
+
+binout = bin(int.from_bytes(s.encode(), 'big'))
 splitout = splitEvery(binout, 2)
 print(binout)
 
@@ -37,7 +37,6 @@ x.append(np.sin(2*np.pi * start_sequence * t[:samples]))
 
 for i in splitout:
 	
-	t = np.linspace(0, T, T*rate, endpoint=False)
 	if i == '00':
 		x.append(np.sin(2*np.pi * f1 * t[:samples]))
 	if i == '01':
@@ -49,11 +48,8 @@ for i in splitout:
 
 
 #end sequence with 4000hz
-t = np.linspace(0, T, T*rate, endpoint=False)
 x.append(np.sin(2*np.pi * stop_sequence * t[:samples]))
-t = np.linspace(0, T, T*rate, endpoint=False)
 x.append(np.sin(2*np.pi * stop_sequence * t[:samples]))
-t = np.linspace(0, T, T*rate, endpoint=False)
 x.append(np.sin(2*np.pi * stop_sequence * t[:samples]))
 #------------------------------------------------------------------------------
 
