@@ -8,7 +8,7 @@ def splitEvery(string, splitLength):
 
 filename = input("Enter filename(without extension): ")
 
-binout = bin(int.from_bytes(s.encode(), 'big'))
+binout = bin(int.from_bytes(s.encode(), 'big')).replace("b", "")
 splitout = splitEvery(binout, 2)
 print(binout)
 
